@@ -32,9 +32,9 @@ const reducer = (state, action) => {
   }
 };
 function Product() {
-  //============
+  //==============
   //PRODUCT FILTER
-  //============
+  //==============
   const { search } = useLocation();
   const sp = new URLSearchParams(search);
   const category = sp.get("category") || "all";
