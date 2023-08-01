@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HomeScreen from "./screens/homescreen/HomeScreen";
+import Footer from "./common/footer/Footer";
+import NavBar from "./common/nav bar/NavBar";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import ScrollToTop from "./components/utilities/scroll to top/ScrollToTop";
+import LoadingOverlayComponent from "./components/utilities/message loading/OverlayLoading";
+import { useState } from "react";
+import Cart from "./common/cart/Cart";
 
 function App() {
+  const [isCartOpen, setIsCartOpen] = useState(false);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <LoadingOverlayComponent>
+          <ToastContainer />
+          <ScrollToTop />
+          <NavBar isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen} />
+          <Cart isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen} />
+          <Routes>
+            <Route path="/" element={<HomeScreen />}></Route>
+          </Routes>
+          <Footer />
+        </LoadingOverlayComponent>
+      </Router>
     </div>
   );
 }

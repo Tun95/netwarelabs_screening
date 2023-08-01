@@ -1,0 +1,60 @@
+.nav_bar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--color-white);
+  .content {
+    padding: 10px 0px;
+    .logo {
+      img {
+        width: 60%;
+      }
+    }
+    .list {
+      li {
+        margin-left: 50px;
+        position: relative;
+        font-weight: 600;
+        transition: var(--transition);
+      }
+      a {
+        transition: var(--transition);
+      }
+      a:hover {
+        color: var(--color-gray);
+      }
+    }
+    .icons {
+      .mui_icons {
+        margin-left: 30px;
+        cursor: pointer;
+      }
+      .favorite {
+        .bagde {
+          position: relative;
+          left: 60px;
+          bottom: 10px;
+          font-size: 14px;
+          background-color: var(--color-bg-bg);
+          width: 20px;
+          height: 20px;
+          color: var(--color-white);
+          border-radius: 50%;
+          cursor: pointer;
+        }
+      }
+    }
+    @media screen and (max-width: 885px) {
+      .logo {
+        img {
+          width: 120px;
+        }
+      }
+    }
+    @media screen and (max-width: 635px) {
+      .list {
+        display: none;
+      }
+    }
+  }
+}
