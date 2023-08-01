@@ -9,18 +9,8 @@ import DoDisturbIcon from "@mui/icons-material/DoDisturb";
 import { RWebShare } from "react-web-share";
 import ShareIcon from "@mui/icons-material/Share";
 
-const label = { inputProps: { "aria-label": "Checkbox demo" } };
-
-function ShopItems({ products, dispatch }) {
-  const { state, dispatch: ctxDispatch, convertCurrency } = useContext(Context);
-  const {
-    cart: { cartItems },
-  } = state;
-
-  const [count, setCount] = useState(0);
-  const increment = () => {
-    setCount(count + 1);
-  };
+function ProductItems({ products, dispatch }) {
+  const { state, dispatch: ctxDispatch } = useContext(Context);
 
   //Product Quantity
   const [quantity, setQuantity] = useState(1);
@@ -125,4 +115,4 @@ function ShopItems({ products, dispatch }) {
   );
 }
 
-export default ShopItems;
+export default ProductItems;

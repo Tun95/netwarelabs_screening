@@ -4,12 +4,12 @@ import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
 import { request } from "../../../base url/BaseUrl";
 import { getError } from "../../utilities/util/Utils";
-import ShopItems from "./ShopItems";
 import Pagination from "@mui/material/Pagination";
 import PaginationItem from "@mui/material/PaginationItem";
 import Filters from "./Filters";
 import LoadingBox from "../../utilities/message loading/LoadingBox";
 import MessageBox from "../../utilities/message loading/MessageBox";
+import ProductItems from "./ProductItems";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -31,7 +31,7 @@ const reducer = (state, action) => {
       return state;
   }
 };
-function Shop() {
+function Product() {
   //============
   //PRODUCT FILTER
   //============
@@ -132,7 +132,7 @@ function Shop() {
                   </div>
                 )}
                 <div className="product-content">
-                  <ShopItems products={products} dispatch={dispatch} />
+                  <ProductItems products={products} dispatch={dispatch} />
                 </div>
                 {countProducts > 6 ? (
                   <div className="pagination">
@@ -168,4 +168,4 @@ function Shop() {
   );
 }
 
-export default Shop;
+export default Product;

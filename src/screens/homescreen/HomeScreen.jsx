@@ -1,6 +1,6 @@
 import React from "react";
 import Wrapper from "../../components/home/wrapper/Wrapper";
-import Shop from "../../components/home/shop/Shop";
+import Product from "../../components/home/product/Product";
 import Slider from "../../components/home/slider/Slider";
 
 function HomeScreen() {
@@ -9,7 +9,7 @@ function HomeScreen() {
       <Slider />
       <div className="container ">
         <Wrapper />
-        <Shop />
+        <Product />
       </div>
     </div>
   );
