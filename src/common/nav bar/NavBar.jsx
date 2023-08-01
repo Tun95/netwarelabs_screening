@@ -18,7 +18,9 @@ function NavBar({ setIsCartOpen, isCartOpen }) {
       <div className="container">
         <div className="content c_flex">
           <div className="logo">
-            <img src={logo} alt="logo" />
+            <Link to="/">
+              <img src={logo} alt="logo" />
+            </Link>
           </div>
           <div className="list ">
             <ul className="c_flex">
